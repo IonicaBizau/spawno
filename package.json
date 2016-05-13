@@ -1,6 +1,6 @@
 {
   "name": "spawno",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Easily work with child processes.",
   "main": "lib/index.js",
   "directories": {
@@ -27,5 +27,16 @@
   "bugs": {
     "url": "https://github.com/IonicaBizau/spawno/issues"
   },
-  "homepage": "https://github.com/IonicaBizau/spawno#readme"
+  "homepage": "https://github.com/IonicaBizau/spawno#readme",
+  "files": [
+    "bin/",
+    "app/",
+    "lib/",
+    "dist/",
+    "src/",
+    "resources/",
+    "menu/",
+    "cli.js",
+    "index.js"
+  ]
 }
