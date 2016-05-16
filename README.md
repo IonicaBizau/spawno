@@ -1,51 +1,20 @@
 
+# spawno [![PayPal](https://img.shields.io/badge/%24-paypal-f39c12.svg)][paypal-donations] [![Version](https://img.shields.io/npm/v/spawno.svg)](https://www.npmjs.com/package/spawno) [![Downloads](https://img.shields.io/npm/dt/spawno.svg)](https://www.npmjs.com/package/spawno) [![Get help on Codementor](https://cdn.codementor.io/badges/get_help_github.svg)](https://www.codementor.io/johnnyb?utm_source=github&utm_medium=button&utm_term=johnnyb&utm_campaign=github)
 
+> Easily work with child processes.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# spawno
-
-Easily work with child processes.
-
-
-
-
-## Installation
+## :cloud: Installation
 
 ```sh
-$ npm i spawno
+$ npm i --save spawno
 ```
 
 
-
-
-
-
-
-
-
-## Example
-
-
-
+## :clipboard: Example
 
 
 
 ```js
-"use strict";
-
 const spawn = require("spawno");
 
 spawn("ls", ["-l"], { cwd: __dirname }, (err, stdout, stderr) => {
@@ -66,18 +35,9 @@ let proc = spawn("ping", ["ionicabizau.net"], {
 // 64 bytes from cip-109-107-37-233.gb1.brightbox.com (109.107.37.233): icmp_seq=2 ttl=54 time=44.4 ms
 // 64 bytes from cip-109-107-37-233.gb1.brightbox.com (109.107.37.233): icmp_seq=3 ttl=54 time=47.9 ms
 // 64 bytes from cip-109-107-37-233.gb1.brightbox.com (109.107.37.233): icmp_seq=4 ttl=54 time=46.3 ms
-
 ```
 
-
-
-
-
-
-## Documentation
-
-
-
+## :memo: Documentation
 
 
 ### `spawno(command, args, options, cb)`
@@ -96,18 +56,28 @@ Creates the child process.
 
 
 
-
-
-
-## How to contribute
+## :yum: How to contribute
 Have an idea? Found a bug? See [how to contribute][contributing].
 
+## :dizzy: Where is this library used?
+If you are using this library in one of your projects, add it in this list. :sparkles:
 
 
-## License
-See the [LICENSE][license] file.
+ - [`electroner`](https://github.com/IonicaBizau/electroner#readme)—Start ElectronJS apps from Node.js.
+ - [`git-cloner`](https://github.com/IonicaBizau/git-cloner#readme)—Clone multiple git repositories.
+ - [`initial-commit-date`](https://github.com/IonicaBizau/initial-commit-date#readme)—Get the initial commit date of a git repository.
+ - [`powershell`](https://github.com/IonicaBizau/powershell#readme)—Run PowerShell scripts and commands from Node.js.
+ - [`ship-release`](https://github.com/IonicaBizau/ship-release#readme)—Publish new versions on GitHub and npm with ease.
+ - [`spawn-npm`](https://github.com/IonicaBizau/spawn-npm#readme)—Run npm commands by creating child processes.
 
+## :scroll: License
 
-[license]: /LICENSE
+[MIT][license] © [Ionică Bizău][website]
+
+[paypal-donations]: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=RVXDDLKKLQRJW
+[donate-now]: http://i.imgur.com/6cMbHOC.png
+
+[license]: http://showalicense.com/?fullname=Ionic%C4%83%20Biz%C4%83u%20%3Cbizauionica%40gmail.com%3E%20(http%3A%2F%2Fionicabizau.net)&year=2016#license-mit
+[website]: http://ionicabizau.net
 [contributing]: /CONTRIBUTING.md
 [docs]: /DOCUMENTATION.md
