@@ -1,6 +1,6 @@
 {
   "name": "spawno",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Easily work with child processes.",
   "main": "lib/index.js",
   "directories": {
