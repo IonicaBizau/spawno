@@ -12,7 +12,7 @@ spawn("ls", ["-l"], { cwd: __dirname }, (err, stdout, stderr) => {
 // Pipe the output in the stdout/stderr streams (this will not collect the output in memory)
 let proc = spawn("ping", ["ionicabizau.net"], {
     cwd: __dirname
-  , _showOutput: true
+  , output: true
 });
 // =>
 // PING ionicabizau.net (109.107.37.233) 56(84) bytes of data.
