@@ -29,7 +29,7 @@ spawn("ls", ["-l"], { cwd: __dirname }, (err, stdout, stderr) => {
 // Pipe the output in the stdout/stderr streams (this will not collect the output in memory)
 let proc = spawn("ping", ["ionicabizau.net"], {
     cwd: __dirname
-  , _showOutput: true
+  , output: true
 });
 // =>
 // PING ionicabizau.net (109.107.37.233) 56(84) bytes of data.
@@ -49,8 +49,9 @@ Creates the child process.
 - **String** `command`: The command you want to run.
 - **Array** `args`: The command arguments.
 - **Object** `options`: The options to pass to the `spawn` function extended with:
- - `_showOutput` (Boolean): If truly, the output will be piped in the
+ - `output` (Boolean): If truly, the output will be piped in the
    process stdout/stderr streams.
+ - `data` (String|Boolean): If `false`, the `stdin` stream will not be ended. By default this is an empty string.
 - **Function** `cb`: The callback function.
 
 #### Return
@@ -94,7 +95,9 @@ If you are using this library in one of your projects, add it in this list. :spa
 [paypal-donations]: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=RVXDDLKKLQRJW
 [donate-now]: http://i.imgur.com/6cMbHOC.png
 
+
 [license]: http://showalicense.com/?fullname=Ionic%C4%83%20Biz%C4%83u%20%3Cbizauionica%40gmail.com%3E%20(http%3A%2F%2Fionicabizau.net)&year=2016#license-mit
+
 [website]: http://ionicabizau.net
 [contributing]: /CONTRIBUTING.md
 [docs]: /DOCUMENTATION.md
