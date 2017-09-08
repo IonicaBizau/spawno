@@ -6,6 +6,7 @@ You can see below the API reference of this module.
 Creates the child process.
 
 #### Params
+
 - **String** `command`: The command you want to run.
 - **Array** `args`: The command arguments.
 - **Object** `options`: The options to pass to the `spawn` function extended with:
