@@ -20,3 +20,6 @@ let proc = spawn("ping", ["ionicabizau.net"], {
 // 64 bytes from cip-109-107-37-233.gb1.brightbox.com (109.107.37.233): icmp_seq=2 ttl=54 time=44.4 ms
 // 64 bytes from cip-109-107-37-233.gb1.brightbox.com (109.107.37.233): icmp_seq=3 ttl=54 time=47.9 ms
 // 64 bytes from cip-109-107-37-233.gb1.brightbox.com (109.107.37.233): icmp_seq=4 ttl=54 time=46.3 ms
+
+// Promise interface
+spawn.promise("curl", ["ionicabizau.net"]).then(console.log)
