@@ -18,3 +18,12 @@ Creates the child process.
 #### Return
 - **Process** The child process that was created.
 
+### `spawno.promise()`
+The promise interface.
+
+#### Return
+- **Promise** The promise which will be eventually resolved with the following object:
+  - `code`
+  - `stdout`
+  - `stderr`
+
