@@ -1,6 +1,6 @@
 {
   "name": "spawno",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "description": "Easily work with child processes.",
   "main": "lib/index.js",
   "directories": {
@@ -39,6 +39,8 @@
     "menu/",
     "cli.js",
     "index.js",
+    "index.d.ts",
+    "package-lock.json",
     "bloggify.js",
     "bloggify.json",
     "bloggify/"
