@@ -88,10 +88,11 @@ spawn("ls", ["-l"], { cwd: __dirname }, (err, stdout, stderr) => {
 });
 
 // Pipe the output in the stdout/stderr streams (this will not collect the output in memory)
-let proc = spawn("ping", ["ionicabizau.net"], {
-    cwd: __dirname
-  , output: true
+spawn("ping", ["ionicabizau.net"], {
+    cwd: __dirname,
+    output: true
 });
+
 // =>
 // PING ionicabizau.net (109.107.37.233) 56(84) bytes of data.
 // 64 bytes from cip-109-107-37-233.gb1.brightbox.com (109.107.37.233): icmp_seq=1 ttl=54 time=49.2 ms
@@ -100,11 +101,52 @@ let proc = spawn("ping", ["ionicabizau.net"], {
 // 64 bytes from cip-109-107-37-233.gb1.brightbox.com (109.107.37.233): icmp_seq=4 ttl=54 time=46.3 ms
 
 // Promise interface
-spawn.promise("curl", ["ionicabizau.net"]).then(console.log)
+spawn.promise("curl", ["ionicabizau.net"]).then(console.log);
 ```
 
 
 
+
+
+
+
+
+
+
+
+## :memo: Documentation
+
+
+### `spawno(command, args, options, cb)`
+Creates the child process.
+
+#### Params
+
+- **string** `command`: The command you want to run.
+- **Array** `args`: The command arguments.
+- **object** `options`: The options to pass to the `spawn` function extended with:
+ - `output` (Boolean): If truly, the output will be piped in the
+   process stdout/stderr streams.
+ - `data` (String|Boolean): If `false`, the `stdin` stream will not be ended. By default this is an empty string.
+- **Function** `cb`: The callback function.
+
+#### Return
+- **Process** The child process that was created.
+
+### `spawno.promise(command, args, options)`
+The promise interface.
+
+#### Params
+
+- **string** `command`: The command you want to run.
+- **Array** `args`: The command arguments.
+- **object** `options`: The options to pass to the `spawn` function.
+
+#### Return
+- **Promise** The promise which will be eventually resolved with the following object:
+  - `code`
+  - `stdout`
+  - `stderr`
 
 
 
@@ -123,40 +165,6 @@ There are few ways to get help:
  1. Please [post questions on Stack Overflow](https://stackoverflow.com/questions/ask). You can open issues with questions, as long you add a link to your Stack Overflow question.
  2. For bug reports and feature requests, open issues. :bug:
  3. For direct and quick help, you can [use Codementor](https://www.codementor.io/johnnyb). :rocket:
-
-
-
-
-
-
-
-## :memo: Documentation
-
-
-### `spawno(command, args, options, cb)`
-Creates the child process.
-
-#### Params
-
-- **String** `command`: The command you want to run.
-- **Array** `args`: The command arguments.
-- **Object** `options`: The options to pass to the `spawn` function extended with:
- - `output` (Boolean): If truly, the output will be piped in the
-   process stdout/stderr streams.
- - `data` (String|Boolean): If `false`, the `stdin` stream will not be ended. By default this is an empty string.
-- **Function** `cb`: The callback function.
-
-#### Return
-- **Process** The child process that was created.
-
-### `spawno.promise()`
-The promise interface.
-
-#### Return
-- **Promise** The promise which will be eventually resolved with the following object:
-  - `code`
-  - `stdout`
-  - `stderr`
 
 
 

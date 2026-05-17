@@ -7,9 +7,9 @@ Creates the child process.
 
 #### Params
 
-- **String** `command`: The command you want to run.
+- **string** `command`: The command you want to run.
 - **Array** `args`: The command arguments.
-- **Object** `options`: The options to pass to the `spawn` function extended with:
+- **object** `options`: The options to pass to the `spawn` function extended with:
  - `output` (Boolean): If truly, the output will be piped in the
    process stdout/stderr streams.
  - `data` (String|Boolean): If `false`, the `stdin` stream will not be ended. By default this is an empty string.
@@ -18,8 +18,14 @@ Creates the child process.
 #### Return
 - **Process** The child process that was created.
 
-### `spawno.promise()`
+### `spawno.promise(command, args, options)`
 The promise interface.
+
+#### Params
+
+- **string** `command`: The command you want to run.
+- **Array** `args`: The command arguments.
+- **object** `options`: The options to pass to the `spawn` function.
 
 #### Return
 - **Promise** The promise which will be eventually resolved with the following object:
