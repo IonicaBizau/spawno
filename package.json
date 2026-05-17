@@ -2,14 +2,15 @@
   "name": "spawno",
   "version": "2.1.2",
   "description": "Easily work with child processes.",
+  "type": "module",
   "main": "lib/index.js",
+  "exports": "./lib/index.js",
   "directories": {
     "example": "example"
   },
   "dependencies": {
-    "proc-output": "^1.0.0"
+    "proc-output": "^2.0.0"
   },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

@@ -1,6 +1,8 @@
-"use strict";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+import spawn from "../lib/index.js";
 
-const spawn = require("../lib");
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 spawn("ls", ["-l"], { cwd: __dirname }, (err, stdout, stderr) => {
     console.log(err || stderr || stdout);
@@ -10,10 +12,11 @@ spawn("ls", ["-l"], { cwd: __dirname }, (err, stdout, stderr) => {
 });
 
 // Pipe the output in the stdout/stderr streams (this will not collect the output in memory)
-let proc = spawn("ping", ["ionicabizau.net"], {
-    cwd: __dirname
-  , output: true
+spawn("ping", ["ionicabizau.net"], {
+    cwd: __dirname,
+    output: true
 });
+
 // =>
 // PING ionicabizau.net (109.107.37.233) 56(84) bytes of data.
 // 64 bytes from cip-109-107-37-233.gb1.brightbox.com (109.107.37.233): icmp_seq=1 ttl=54 time=49.2 ms
@@ -22,4 +25,4 @@ let proc = spawn("ping", ["ionicabizau.net"], {
 // 64 bytes from cip-109-107-37-233.gb1.brightbox.com (109.107.37.233): icmp_seq=4 ttl=54 time=46.3 ms
 
 // Promise interface
-spawn.promise("curl", ["ionicabizau.net"]).then(console.log)
+spawn.promise("curl", ["ionicabizau.net"]).then(console.log);

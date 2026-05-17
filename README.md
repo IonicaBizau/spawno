@@ -74,7 +74,11 @@ yarn add spawno
 
 
 ```js
-const spawn = require("spawno");
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+import spawn from "spawno";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 spawn("ls", ["-l"], { cwd: __dirname }, (err, stdout, stderr) => {
     console.log(err || stderr || stdout);
